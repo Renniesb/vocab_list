@@ -1,21 +1,10 @@
 // ROUTES
-weatherApp.config(function ($routeProvider) {
+vocabApp.config(function ($stateProvider) {
 
-    $routeProvider
-
-    .when('/', {
-        templateUrl: 'views/home.html',
-        controller: 'homeController'
-    })
-
-    .when('/forecast', {
-        templateUrl: 'views/forecast.html',
-        controller: 'forecastController'
-    })
-
-    .when('/forecast/:days', {
-        templateUrl: 'views/forecast.html',
-        controller: 'forecastController'
-    })
-
+    $stateProvider
+        .state('home', {
+            url: "/home",
+            templateUrl: "views/home.html",
+            controller: "scripts/controllers/home.js"
+        });
 });

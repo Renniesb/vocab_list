@@ -1,3 +1,3 @@
 // MODULE
-var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
+var vocabApp = angular.module('vocabApp', ['ui.router', 'ngResource']);
 
