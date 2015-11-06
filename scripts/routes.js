@@ -1,21 +1,21 @@
 // ROUTES
 weatherApp.config(function ($routeProvider) {
-   
+
     $routeProvider
-    
+
     .when('/', {
-        templateUrl: 'pages/home.htm',
+        templateUrl: 'views/home.html',
         controller: 'homeController'
     })
-    
+
     .when('/forecast', {
-        templateUrl: 'pages/forecast.htm',
+        templateUrl: 'views/forecast.html',
         controller: 'forecastController'
     })
-    
+
     .when('/forecast/:days', {
-        templateUrl: 'pages/forecast.htm',
+        templateUrl: 'views/forecast.html',
         controller: 'forecastController'
     })
-    
+
 });
