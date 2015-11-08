@@ -1,6 +1,5 @@
-// SERVICES
-weatherApp.service('cityService', function() {
-   
-    this.city = "New York, NY";
-    
-});
+vocabApp.service('wordService', function  () {
+	// default Spanish word in monolingual word search
+	this.word = 'Hola';
+
+})

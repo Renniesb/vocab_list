@@ -1,0 +1,14 @@
+<p>
+    <a href="#/">Back to Search</a>
+</p>
+
+Results for {{ word }}
+<hr />
+
+<div ng-repeat="text in dictionaryResults.tuc.meanings">
+    <div class="row">
+        <div class="col-md-12">
+            <dictionary-results definition="text"></dictionary-results>
+        </div>
+    </div>
+</div>
