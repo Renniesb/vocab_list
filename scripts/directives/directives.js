@@ -5,7 +5,7 @@ vocabApp.directive("dictionaryResults", function() {
        templateUrl: 'directives/dictionaryResults.html',
        replace: true,
        scope: {
-           definition: "@"
+           definition: "="
            // example: "@"
        }
    }

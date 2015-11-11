@@ -1,5 +1,6 @@
 vocabApp.controller('resultsController', ['$scope','$resource', 'wordService', function  ($scope, $resource, wordService) {
 	$scope.word = wordService.word;
+    $scope.meanings;
 
 	$scope.dictionaryAPI = $resource("https://glosbe.com/gapi/translate?from=es&dest=es&format=json&phrase="+ $scope.word.toLowerCase()+"&tm=true&pretty=true", { callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
 	$scope.dictionaryResults = $scope.dictionaryAPI.get().$promise.then(function(data){
@@ -12,7 +13,7 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService', f
 
 				}
 
-                console.log(word.meanings);
+               $scope.meanings = word.meanings;
             });
 
 }]);
