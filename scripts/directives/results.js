@@ -1,4 +1,4 @@
-// DIRECTIVES
+// Dictionary Results DIRECTIVE
 vocabApp.directive("dictionaryResults", function() {
    return {
        restrict: 'E',
