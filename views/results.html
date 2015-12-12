@@ -1,4 +1,4 @@
-<p>
+ <p>
     <a href="#/">Back to Search</a>
 </p>
 
@@ -7,8 +7,13 @@ Results for {{ word }}
 
 <div ng-repeat="def in meanings">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-9">
             <dictionary-results definition="def"></dictionary-results>
+        </div>
+        <div class="col-md-3">
+			<div ng-click="addSelected()">
+        		<input id="inactive" class="btn btn-primary" value="add definition" />
+        	</div>
         </div>
 
     </div>
@@ -16,5 +21,19 @@ Results for {{ word }}
 
 <h4>Examples:</h4>
 <div ng-repeat="ex in examples">
-	<dictionary-examples example="ex"></dictionary-examples>
+
+	<div class="row">
+		<div class="col-md-6">
+			<dictionary-examples example="ex"></dictionary-examples>
+		</div>
+		<div class="col-md-6">
+	        <input id="inactive" type="submit" class="btn btn-primary" value="add example" />
+	    </div>
+	</div>
+
 </div>
+<footer class="navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <span>Winning!</span>
+  </div>
+</footer>

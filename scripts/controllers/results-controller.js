@@ -3,6 +3,19 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
     $scope.meanings=[];
     $scope.examples=[];
 
+    $scope.addContent = function (){
+
+
+
+    }
+
+    $scope.addSelected = function (){
+            var myEl = $(event.currentTarget).find('#inactive');
+            myEl.toggleClass('active');
+
+
+    }
+
 	$scope.dictionaryAPI = $resource("https://glosbe.com/gapi/translate?from=es&dest=es&format=json&phrase="+ $scope.word.toLowerCase()+"&tm=true&pretty=true", { callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
 	$scope.dictionaryResults = $scope.dictionaryAPI.get().$promise.then(function(data){
 
