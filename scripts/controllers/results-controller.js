@@ -3,11 +3,20 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
     $scope.meanings=[];
     $scope.examples=[];
     $scope.listDefs = [];
+    $scope.listEx = [];
 
     $scope.addContent = function (){
 
         $location.path("/results");
 
+    }
+
+    $scope.getExample = function (){
+        var selectEx = $(event.currentTarget).parent().prev().find(".ng-binding").html();
+        if ($scope.listEx.indexOf(selectEx)===-1) {
+                $scope.listEx.push(selectEx);
+        };
+        console.log($scope.listEx);
     }
 
     $scope.getDef = function (){
