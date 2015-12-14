@@ -8,10 +8,10 @@ Results for {{ word }}
 <div ng-repeat="def in meanings">
     <div class="row">
         <div class="col-md-9">
-            <dictionary-results definition="def" click="addSelected"></dictionary-results>
+            <dictionary-results definition="def"></dictionary-results>
         </div>
         <div class="col-md-3">
-        	<input ng-click="addSelected()" class="btn btn-primary" value="add definition" />
+        	<input ng-click="getDef()" class="btn btn-primary" value="add definition" />
         </div>
 
 

@@ -2,6 +2,7 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
 	$scope.word = wordService.word;
     $scope.meanings=[];
     $scope.examples=[];
+    $scope.listDefs = [];
 
     $scope.addContent = function (){
 
@@ -9,9 +10,13 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
 
     }
 
-    $scope.addSelected = function (){
-            var myEl = $(event.currentTarget).parent().prev().find("span").html();
-           console.log(myEl);
+    $scope.getDef = function (){
+            var selectDef = $(event.currentTarget).parent().prev().find("span").html();
+            if ($scope.listDefs.indexOf(selectDef)===-1) {
+                $scope.listDefs.push(selectDef);
+            };
+
+           console.log($scope.listDefs);
 
 
     }
