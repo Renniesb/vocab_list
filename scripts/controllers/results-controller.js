@@ -5,13 +5,13 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
 
     $scope.addContent = function (){
 
-
+        $location.path("/results");
 
     }
 
     $scope.addSelected = function (){
-            var myEl = $(event.currentTarget).find('#inactive');
-            myEl.toggleClass('active');
+            var myEl = $(event.currentTarget).parent().prev().find("span").html();
+           console.log(myEl);
 
 
     }

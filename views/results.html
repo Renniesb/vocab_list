@@ -8,13 +8,12 @@ Results for {{ word }}
 <div ng-repeat="def in meanings">
     <div class="row">
         <div class="col-md-9">
-            <dictionary-results definition="def"></dictionary-results>
+            <dictionary-results definition="def" click="addSelected"></dictionary-results>
         </div>
         <div class="col-md-3">
-			<div ng-click="addSelected()">
-        		<input id="inactive" class="btn btn-primary" value="add definition" />
-        	</div>
+        	<input ng-click="addSelected()" class="btn btn-primary" value="add definition" />
         </div>
+
 
     </div>
 </div>
@@ -34,6 +33,12 @@ Results for {{ word }}
 </div>
 <footer class="navbar-default navbar-fixed-bottom">
   <div class="container-fluid">
-    <span>Winning!</span>
+        <div class="col-md-9">
+
+        <form ng-submit="addContent()">
+	        <input type="submit" class="btn btn-primary" value="Get Definitions" />
+        </form>
+
+        </div>
   </div>
 </footer>

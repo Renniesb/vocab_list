@@ -9,6 +9,10 @@ vocabApp.config(function  ($routeProvider) {
 		templateUrl: 'views/results.html',
 		controller: 'resultsController'
 	})
+	.when('/list',{
+		templateUrl:'views/list.html',
+		controller: 'listController'
+	})
 });
 
 // ROUTES
