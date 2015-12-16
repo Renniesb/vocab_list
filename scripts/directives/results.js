@@ -1,4 +1,6 @@
-// Dictionary Results DIRECTIVE
+// Dictionary definitions DIRECTIVE
+
+//TODO: change name of this file to definitions.js
 vocabApp.directive("dictionaryResults", function() {
    return {
        restrict: 'E',

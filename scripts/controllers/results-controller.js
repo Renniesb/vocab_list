@@ -4,9 +4,7 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
     $scope.examples=[];
     $scope.listDefs =[];
     $scope.listEx = [];
-    // $scope.vocabList = {
-    //     terms: []
-    // }
+
 
 
 
