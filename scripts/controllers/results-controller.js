@@ -2,12 +2,42 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
 	$scope.word = wordService.word;
     $scope.meanings=[];
     $scope.examples=[];
-    $scope.listDefs = [];
+    $scope.listDefs =[];
     $scope.listEx = [];
+    // $scope.vocabList = {
+    //     terms: []
+    // }
+
+
 
     $scope.addContent = function (){
 
+
+
+
+        $scope.listService.terms.push({
+            word: $scope.word,
+            defs: $scope.listDefs,
+            examples: $scope.listEx
+        });
+
+        $scope.listDefs =[];
+        $scope.listEx = [];
+
         $location.path("/results");
+
+    }
+
+
+
+    $scope.getDef = function (){
+            var selectDef = $(event.currentTarget).parent().prev().find("span").html();
+            if ($scope.listDefs.indexOf(selectDef) ===-1) {
+                $scope.listDefs.push(selectDef);
+            };
+
+           console.log($scope.listDefs);
+
 
     }
 
@@ -17,17 +47,6 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
                 $scope.listEx.push(selectEx);
         };
         console.log($scope.listEx);
-    }
-
-    $scope.getDef = function (){
-            var selectDef = $(event.currentTarget).parent().prev().find("span").html();
-            if ($scope.listDefs.indexOf(selectDef)===-1) {
-                $scope.listDefs.push(selectDef);
-            };
-
-           console.log($scope.listDefs);
-
-
     }
 
 	$scope.dictionaryAPI = $resource("https://glosbe.com/gapi/translate?from=es&dest=es&format=json&phrase="+ $scope.word.toLowerCase()+"&tm=true&pretty=true", { callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
