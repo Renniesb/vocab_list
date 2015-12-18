@@ -1,9 +1,16 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Definition:</h3>
+        <h3 class="panel-title">Word: <strong><span ng-bind-html="term"></span></strong></h3>
     </div>
-
     <div class="panel-body">
-		 <span ng-bind-html="word"></span>
+    	&nbsp;<strong>Definition(s)</strong>
+			 <ul>
+	  			<li ng-repeat="def in defs" ng-bind-html="def"></li>
+	  		 </ul>
+	  	&nbsp;<strong>Example(s)</strong>
+			 <ul>
+	  			<li ng-repeat="example in examples" ng-bind-html="example"></li>
+	  		 </ul>
     </div>
 </div>
+

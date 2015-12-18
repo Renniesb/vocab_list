@@ -1,13 +1,14 @@
 // user word list DIRECTIVE
 
-vocabApp.directive("userList", function() {
+vocabApp.directive("vocabList", function() {
    return {
        restrict: 'E',
        templateUrl: 'directives/vocabList.html',
        replace: true,
        scope: {
-           definition: "=",
-           example: "@",
+           term: "=",
+           defs: "=",
+           examples: "="
 
        }
    }

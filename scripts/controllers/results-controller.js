@@ -1,5 +1,6 @@
-vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$sce', function  ($scope, $resource, wordService,$sce) {
+vocabApp.controller('resultsController', ['$scope','$resource', 'wordService', 'listService', '$location','$sce', function  ($scope, $resource, wordService, listService, $location, $sce) {
 	$scope.word = wordService.word;
+    $scope.vocabList = listService.terms;
     $scope.meanings=[];
     $scope.examples=[];
     $scope.listDefs =[];
@@ -10,10 +11,7 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
 
     $scope.addContent = function (){
 
-
-
-
-        $scope.listService.terms.push({
+        $scope.vocabList.push({
             word: $scope.word,
             defs: $scope.listDefs,
             examples: $scope.listEx
@@ -22,7 +20,9 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService','$
         $scope.listDefs =[];
         $scope.listEx = [];
 
-        $location.path("/results");
+        $location.path("/list");
+
+        console.log($scope.vocabList[0].word);
 
     }
 
