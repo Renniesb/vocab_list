@@ -7,3 +7,13 @@
 	margin-top: 100px;
 }
 
+.caption{
+	margin-top: 5px;
+}
+
+.listrule {
+	height: 30px;
+	border-top: 3px solid #555;
+	width: 30%;
+
+}
