@@ -5,7 +5,7 @@ vocabApp.controller('homeController', ['$scope', 'wordService', '$location','$sc
 			wordService.word = $scope.word;
 		} );
 
-		$scope.myImgSrc = $sce.trustAsResourceUrl('/vocab_list/images/bandera.jpg');
+		$scope.myImgSrc = $sce.trustAsResourceUrl('../images/bandera.jpg');
 
 		$scope.submit = function () {
 			$location.path("/results");
