@@ -1,7 +1,10 @@
 <div ng-repeat="term in vocabList">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-6">
             <vocab-list term="term.word" defs="term.defs" examples="term.examples"></vocab-list>
         </div>
+        <div class="col-md-6">
+	        <input ng-click="removeWord(term)" type="button" class="btn btn-danger" value="Remove" />
+	    </div>
     </div>
 </div>

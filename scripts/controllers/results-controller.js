@@ -28,23 +28,21 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService', '
 
 
 
-    $scope.getDef = function (){
-            var selectDef = $(event.currentTarget).parent().prev().find("span").html();
-            if ($scope.listDefs.indexOf(selectDef) ===-1) {
-                $scope.listDefs.push(selectDef);
-            };
+    $scope.getDef = function (def){
 
-           console.log($scope.listDefs);
+            if ($scope.listDefs.indexOf(def) ===-1) {
+                $scope.listDefs.push(def);
+            };
 
 
     }
 
-    $scope.getExample = function (){
-        var selectEx = $(event.currentTarget).parent().prev().find(".ng-binding").html();
-        if ($scope.listEx.indexOf(selectEx)===-1) {
-                $scope.listEx.push(selectEx);
+    $scope.getExample = function (ex){
+       
+        if ($scope.listEx.indexOf(ex)===-1) {
+                $scope.listEx.push(ex);
         };
-        console.log($scope.listEx);
+        
     }
 
 	$scope.dictionaryAPI = $resource("https://glosbe.com/gapi/translate?from=es&dest=es&format=json&phrase="+ $scope.word.toLowerCase()+"&tm=true&pretty=true", { callback: "JSON_CALLBACK" }, { get: { method: "JSONP" }});
