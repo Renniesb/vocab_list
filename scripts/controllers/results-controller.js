@@ -22,8 +22,6 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService', '
 
         $location.path("/list");
 
-        console.log($scope.vocabList[0].word);
-
     }
 
 
@@ -32,7 +30,14 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService', '
 
             if ($scope.listDefs.indexOf(def) ===-1) {
                 $scope.listDefs.push(def);
+                $(event.currentTarget).removeClass('btn-primary');
+                $(event.currentTarget).addClass('btn-warning');
+            }else {
+                $(event.currentTarget).removeClass('btn-warning');
+                $(event.currentTarget).addClass('btn-primary');
+                $scope.listDefs.splice(def, 1);
             };
+          
 
 
     }
@@ -41,7 +46,13 @@ vocabApp.controller('resultsController', ['$scope','$resource', 'wordService', '
        
         if ($scope.listEx.indexOf(ex)===-1) {
                 $scope.listEx.push(ex);
-        };
+                $(event.currentTarget).removeClass('btn-primary');
+                $(event.currentTarget).addClass('btn-warning');
+            }else {
+                $(event.currentTarget).removeClass('btn-warning');
+                $(event.currentTarget).addClass('btn-primary');
+                $scope.listEx.splice(ex, 1);
+            };        
         
     }
 
