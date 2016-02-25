@@ -1,11 +1,71 @@
+
 <div class="row">
 	<div class="col-md-12 text-center">
-		<h2>Spanish Vocab Trainer</h2>
+		<h1 class="home-title">Spanish Vocab Trainer</h1>
 	</div>
 </div>
 
+
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	<li data-target="#myCarousel" data-slide-to="1"></li>
+	<li data-target="#myCarousel" data-slide-to="2"></li>
+	<li data-target="#myCarousel" data-slide-to="3"></li>
+	<li data-target="#myCarousel" data-slide-to="4"></li>
+</ol>
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+	<div class="item active">
+		<div class="fill"><img class="img-responsive"src="Images/word-search.jpg"/></div>
+		<div class="carousel-caption">
+			<h3>Search for a Spanish Word in the word search</h3>
+		</div>
+	</div>
+	<div class="item">
+		<div class="fill"><img class="img-responsive"src="Images/select-definition.jpg"/></div>
+		<div class="carousel-caption">
+			<h2>Select a definition for your vocab list</h2>
+		</div>
+	</div>
+	<div class="item">
+		<div class="fill"><img class="img-responsive"src="Images/select-example.jpg"/></div>
+		<div class="carousel-caption">
+			<h3>Select an example sentence for your vocab list</h3>
+		</div>
+	</div>
+	<div class="item">
+		<div class="fill"><img class="img-responsive"src="Images/add-to-list.jpg"/></div>
+		<div class="carousel-caption">
+			<h4>Press the ADD TO VOCAB LIST button to add the word, examples and definitions to your vocab list</h4>
+		</div>
+	</div>
+	<div class="item">
+		<div class="fill"><img class="img-responsive"src="Images/navigation.jpg"/></div>
+		<div class="carousel-caption">
+			<h3>Use the top navigation to move between the word search and vocab list</h3>
+		</div>
+	</div>
+</div>
+<!-- Controls -->
+<a data-target="#myCarousel" data-slide="prev" class="left carousel-control">
+	<span class="icon-prev"></span>
+</a>
+<a data-target="#myCarousel" data-slide="next" class="right carousel-control">
+	<span class="icon-next"></span>
+</a>
+</header>
+
+
+<!-- Page Content -->
+
+
 <div class="row downshift">
     <div class="col-md-2 col-md-offset-2">
+
+
 		<img ng-src="{{myImgSrc}}">
 
 	</div>
@@ -27,9 +87,18 @@
 		<p>An application to find Spanish words and their definitions along with example sentences. This app is designed to get you learning Spanish words by learning their definitions in Spanish. It also is a great app to see words in their context.  These items can later be added to your vocab list to have a list of words with definitions and example sentences.</p>
 		<ul>
 			<li>Search for a word in the Spanish Monolingual Dictionary</li>
-			<li>Select the definitions and examples you want, the application only adds to your list what you select</li>
+			<li>Select the definitions and examples you want</li>
 			<li>Add the word, definitions and examples to your vocab list by pressing the ADD TO VOCAB LIST button</li>
 			<li>Return to Word Search or Vocab List by using the Navigation at the top </li>
-		</ul>		
+		</ul>
 	</div>
 </div>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+
